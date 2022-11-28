@@ -3,7 +3,6 @@ package com.example.projecttest
 import junit.framework.Assert.*
 import org.junit.Test
 import org.mockito.Mockito.*
-import java.lang.RuntimeException
 
 
 class FirstMockitoTest {
@@ -56,6 +55,24 @@ class FirstMockitoTest {
 
         verify(myFerrari).driveTo("Sweet home Shiraz")
         verify(myFerrari).needsFuel()
+    }
+
+    @Test
+    fun testVerificationFailure() {
+        myFerrari.needsFuel()
+        myFerrari.getEngineTemperature()
+        verify(myFerrari).getEngineTemperature()
+    }
+
+    @Test
+    fun testVerificationFailureArguments() {
+        myFerrari.driveTo("Sweet home Alabama")
+        verify(myFerrari).driveTo("Sweet home Honolulu")
+    }
+
+    @Test
+    fun testDummyData() {
+       // val template = mock(Template::class.java)
     }
 
 }
