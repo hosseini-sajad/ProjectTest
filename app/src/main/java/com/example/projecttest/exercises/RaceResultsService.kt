@@ -1,4 +1,7 @@
-package com.example.projecttest
+package com.example.projecttest.exercises
+
+import com.example.projecttest.Client
+import com.example.projecttest.Message
 
 class RaceResultsService {
     private var clients = HashSet<Client?>()

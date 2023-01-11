@@ -22,7 +22,7 @@ class FirstMockitoTest {
         );
         assertEquals(
             "new test double should return 0.0 as double",
-            0.0, myFerrari.getEngineTemperature()
+            0.0, myFerrari.getEngineTemperature(),
         );
 
     }
